@@ -7,8 +7,8 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const HERE = dirname(fileURLToPath(import.meta.url));
-const OUT = join(HERE, "output", "entry.txt");
+const OUTPUT_DIR = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
+const OUT = join(OUTPUT_DIR, "entry.txt");
 
 const CANDIDATES: string[] = [
   "I run a 312-pigeon flock across Central Park, monetizing 9,000 daily crumbs with a zero-CAC flywheel, and my moat is simple: I poop on every rival's pitch deck.",
